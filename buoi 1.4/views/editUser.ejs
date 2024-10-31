@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="/users/edit/<%= user.id %>" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="<%= user.username %>" required>
+        
+        <label for="fullname">Full Name:</label>
+        <input type="text" name="fullname" value="<%= user.fullname %>" required>
+        
+        <label for="address">Address:</label>
+        <input type="text" name="address" value="<%= user.address %>" required>
+        
+        <label for="sex">Sex:</label>
+        <input type="text" name="sex" value="<%= user.sex %>" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<%= user.email %>" required>
+        
+        <button type="submit">Update User</button>
+    </form>
+</body>
+</html>

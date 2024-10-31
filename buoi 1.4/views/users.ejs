@@ -1,0 +1,30 @@
+<%- include('header') %>
+<h2>Danh sách người dùng</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên người dùng</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.fullname %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <a href="/users/edit/<%= user.id %>">Sửa</a>
+                    <form action="/users/delete/<%= user.id %>" method="POST" style="display:inline;">
+                        <button type="submit">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('footer') %>
